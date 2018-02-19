@@ -3,19 +3,24 @@ function yearOfBirth(age) {
 		if(age < 0){
 			throw new Error("Age can not be negative");
 		}
+
 	  let yearOfBirth = 2018 - age;
 	  return yearOfBirth;	
-	}
 
-	catch (e) {
-   console.log(e);
+	} catch (e) {
+   	console.log(e);
 	}
 
 }
 function whoAmI(name, age){
-	let yob = yearOfBirth(age);
-console.log(`Hi, my name is ${name} and I'm ${age} years old`);
-console.log(`I was born in ${yob}`);
 
+	if(typeof name === 'undefined' || typeof age === 'undefined') {
+		console.error("Arguments not valid");
+	} else {
+		let yob = yearOfBirth(age);
+		console.log(`Hi, my name is ${name} and I'm ${age} years old`);
+		console.log(`I was born in ${yob}`);
+	}
 }
-whoAmI("Tharaka", -28);
+
+whoAmI();
