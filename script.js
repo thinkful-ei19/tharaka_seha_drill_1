@@ -17,10 +17,14 @@ function whoAmI(name, age){
 	if(typeof name === 'undefined' || typeof age === 'undefined') {
 		console.error("Arguments not valid");
 	} else {
-		let yob = yearOfBirth(age);
-		console.log(`Hi, my name is ${name} and I'm ${age} years old`);
-		console.log(`I was born in ${yob}`);
+		if(!Number.isInteger(age) || typeof name !== 'string') {
+			console.log('wrong datatypes');
+		} else {
+			let yob = yearOfBirth(age);
+			console.log(`Hi, my name is ${name} and I'm ${age} years old`);
+			console.log(`I was born in ${yob}`);
+		}
 	}
 }
 
-whoAmI();
+whoAmI(21, "two");
